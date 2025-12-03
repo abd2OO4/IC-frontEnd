@@ -375,19 +375,74 @@ with tab_metrics:
 # TAB 3: RESOURCES
 # -----------------------------------------------------------------------------
 with tab_docs:
-    st.markdown("### Resources")
-    st.write("Source code,and other materials.")
+    st.markdown("### Project Documentation")
+    st.write("Details and Reports related to the Image Captioning project.")
     
-    col1, col2 = st.columns(2)
+    st.markdown("<br>", unsafe_allow_html=True)
     
+    col1, col2, col3 = st.columns(3, gap="medium")
+    
+    # 1. GITHUB
     with col1:
-        st.markdown("##### GitHub Repository")
-        st.markdown("[View Source Code →](https://github.com/abd2OO4/image-captioning.git)", unsafe_allow_html=True)
+        st.markdown("""
+        <div class="css-card">
+            <span style="font-size: 2rem;">💻</span>
+            <div style="flex-grow: 1;">
+                <h4 style="margin-top: 10px;">Source Code</h4>
+                <p style="color: #A0AEC0; font-size: 0.9rem;">
+                    Github Code with the model classes and with the main train.py file
+                </p>
+            </div>
+            <a href="https://github.com/abd2OO4/image-captioning.git" target="_blank" style="text-decoration: none;">
+                <div style="background-color: #2D3748; color: white; padding: 10px; border-radius: 4px; text-align: center; margin-top: 15px; font-weight: 500;">
+                    Visit Repository →
+                </div>
+            </a>
+        </div>
+        """, unsafe_allow_html=True)
         
+    # 2. SLIDES
     with col2:
-        st.markdown("##### Presentation")
-        st.markdown("[View Slides →](https://docs.google.com/presentation)", unsafe_allow_html=True)
-        st.caption("A summary of the dataset (Flickr8k), architecture decisions, and result analysis.")
+
+        slides_url = "https://drive.google.com/file/d/1Hp4CQxDShfxH7L5B2U6LA4mKaalmZ7R1/view?usp=sharing"
+        
+        st.markdown(f"""
+        <div class="css-card">
+            <span style="font-size: 2rem;">🎬</span>
+            <div style="flex-grow: 1;">
+                <h4 style="margin-top: 10px;">Behind the Scenes</h4>
+                <p style="color: #A0AEC0; font-size: 0.9rem;">
+                    Presentation slides for easier understanding
+                </p>
+            </div>
+            <a href="{slides_url}" target="_blank" style="text-decoration: none;">
+                <div style="background-color: #2B6CB0; color: white; padding: 10px; border-radius: 4px; text-align: center; margin-top: 15px; font-weight: 500;">
+                    View Presentation →
+                </div>
+            </a>
+        </div>
+        """, unsafe_allow_html=True)
+
+    # 3. REPORT
+    with col3:
+        report_url = "https://drive.google.com/file/d/1QEAAMEnOw8149xNZhPaQbGoVz8JFGvkd/view?usp=sharing"
+        
+        st.markdown(f"""
+        <div class="css-card">
+            <span style="font-size: 2rem;">📄</span>
+            <div style="flex-grow: 1;">
+                <h4 style="margin-top: 10px;">Final Report</h4>
+                <p style="color: #A0AEC0; font-size: 0.9rem;">
+                    Final proj Report with literature review
+                </p>
+            </div>
+            <a href="{report_url}" target="_blank" style="text-decoration: none;">
+                <div style="background-color: #38A169; color: white; padding: 10px; border-radius: 4px; text-align: center; margin-top: 15px; font-weight: 500;">
+                    Read Report →
+                </div>
+            </a>
+        </div>
+        """, unsafe_allow_html=True)
     
     st.markdown("---")
     st.markdown("### Model Summary (Keras)")
